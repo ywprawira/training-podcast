@@ -8,7 +8,7 @@ class MyProvider extends React.Component{
         super();
 
         this.state = {
-        	listPodcast: [],
+        	listPodcast: null,
             loading: true,
             keyword: null
         };
@@ -16,17 +16,17 @@ class MyProvider extends React.Component{
 
     // API
 	componentDidMount() {
-	    axios.get('https://json-server-heroku-svoqwyfacm.now.sh/podcasts')
-	    .then(res => {
-            const listPodcast = res.data;
-            console.log(listPodcast);
-            this.setState({ listPodcast });
-            this.setState({ 
-                loading: false,
-            });
-
-	    });
-
+        if(this.state.listPodcast == null) {
+    	    axios.get('https://json-server-heroku-svoqwyfacm.now.sh/podcasts')
+    	    .then(res => {
+                const dataPodcast = res.data;
+                console.log(dataPodcast);
+                this.setState({ 
+                    listPodcast: dataPodcast,
+                    loading: false
+                });
+	       });
+        }
 	}
 
     // search
@@ -61,12 +61,11 @@ class MyProvider extends React.Component{
 	render() {
         return (
             <MyContext.Provider value={{ 
-                state: this.state,
+                state: this.getPodcastData(),
                 findById: this.findById,
                 loading: this.state.loading,
-                searchPodcast: this.getPodcastData(),
                 keyword: this.state.keyword,
-                find: this.findPodcast,
+                find: this.findPodcast
             }}>
                 {this.props.children}
             </MyContext.Provider>

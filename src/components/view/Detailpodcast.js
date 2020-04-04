@@ -3,13 +3,11 @@ import{
   Link,
   useParams
 } from 'react-router-dom';
-import { MyContext } from "../../Data";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
 const Detailpodcast = (data) => {
 	const { podcastid } = useParams();
-
 	return(
 	    <>
 	    <div className="detailpodcast">

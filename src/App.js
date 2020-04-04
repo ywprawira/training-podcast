@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
 import { MyProvider } from './Data';
 import Content from './components/Content';
 import Header from './components/Header';
@@ -13,6 +12,7 @@ class App extends React.Component {
 	      <>
 	        <MyProvider>
 	        	<Router>
+	        		<Header />
 		         	<Content />
 		        </Router>
 	        </MyProvider>

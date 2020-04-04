@@ -9,7 +9,51 @@ body{
   padding-left: 0px;
   margin-bottom: 10px;
 }
-
+.logo{
+  text-align: center;
+}
+.logo svg{
+  height: 256px;
+  width: 256px;
+  margin: 30px 0;
+}
+.search-wrapper{
+  border: 2px solid #30A187;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+}
+.search-wrapper fieldset{
+  border-width: unset;
+  border-color: unset;
+  border-style: unset;
+}
+.search-wrapper fieldset .input{
+  display: inline-block;
+  width: 80%;
+}
+.search-wrapper fieldset .input input{
+  width: 100%;
+  height: 30px;
+  padding: 0 20px;
+}
+.search-wrapper fieldset .action{
+  float: right;
+}
+.search-wrapper fieldset .action button{
+  background-color: transparent;
+  border: 2px solid #30A187;
+  height: 35px;
+  color: #30A187;
+  padding: 0 20px;
+}
+.search-wrapper fieldset .action button svg{
+  height: 10px;
+  width: 10px;
+  margin-right: 5px;
+}
+.search-wrapper fieldset .action button svg path{
+  fill: #30A187;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
